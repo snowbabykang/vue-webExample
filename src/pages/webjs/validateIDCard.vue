@@ -113,7 +113,6 @@ export default {
 <style scoped>
 .contentbox{
     text-align: center;
-    padding-top: 40px;
 }
 </style>
 

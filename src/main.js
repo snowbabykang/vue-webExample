@@ -9,10 +9,25 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false
 
+// router.afterEach((to, from) => {
+//     console.group('afterEach');
+//     console.log(to);
+//     console.log(from);
+//     console.groupEnd();
+// })
+// router.beforeEach((to, from, next) => {
+//     console.group('beforeEach');
+//     console.log(to);
+//     console.log(from);
+//     console.log(next);
+//     console.groupEnd();
+//     next();
+// })
+
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
 })

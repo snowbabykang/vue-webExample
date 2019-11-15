@@ -136,9 +136,6 @@ export default {
 }
 </script>
 <style scoped>
-.contentbox{
-    padding: 30px;
-}
 .mytable >>> .success-row {
     background: #f0f9eb;
 }

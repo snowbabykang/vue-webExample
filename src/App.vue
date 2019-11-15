@@ -21,4 +21,19 @@ body{
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
 }
+* {
+    box-sizing: border-box;
+}
+pre{
+    background: #f0f1f2;
+    padding: 10px;
+}
+.init-table table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.init-table tr th,.init-table tr td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 </style>
