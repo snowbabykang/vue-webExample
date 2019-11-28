@@ -2,7 +2,8 @@
     <div class="contentbox">
         <el-button type="primary" @click="onSubmit">添加数据</el-button>
         <div class="masonry" v-for="(x,y) in data" :key="y">
-            <div class="item" v-for="item in data[y]" :key="item">
+            <div>第{{y+1}}页</div>
+            <div class="item" v-for="item in x" :key="item">
                 <div class="item__content" :class="'item__content--'+radom()"></div>
             </div>
         </div>
@@ -33,8 +34,6 @@ export default {
                 arr1.push(i);
             }
             this.data.push(arr1);
-            // this.arr = this.arr.concat(arr1);
-            // console.log(this.arr);
         }
     },
     mounted(){

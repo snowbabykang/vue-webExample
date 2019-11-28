@@ -8,8 +8,7 @@ const validateIDCard = () => import('@/pages/webjs/validateIDCard');
 const toFixed = () => import('@/pages/webjs/toFixed');
 const decimalError = () => import('@/pages/webjs/decimalError');
 
-const simpleLayout = () => import('@/pages/simpleLayout');
-const threeLayout = () => import('@/pages/threeLayout');
+const layout = () => import('@/pages/layout');
 const grid = () => import('@/pages/grid');
 const columns = () => import('@/pages/columns');
 const flex = () => import('@/pages/flex');
@@ -50,7 +49,7 @@ export default new Router({
 		{
 			path: '/JS',
 			component: Main,
-			meta: {title: '暂时名字叫js' },  
+			meta: {title: '暂时名字叫js', icon: 'el-icon-edit'},  
 			name: 'webJS' ,
 			menu: true,
 			leaf : true,
@@ -78,23 +77,23 @@ export default new Router({
 		{
 			path: '/cssDisplay',
 			component: Main,
-			meta: {title: 'CSS布局系列' },  
+			meta: {title: 'CSS布局系列', icon: 'el-icon-s-operation' },  
 			name: 'cssDisplay' ,
 			menu: true,
 			leaf : true,
 			children: [
 				{
-					path: '/simpleLayout',
-					name: 'simpleLayout',
+					path: '/layout',
+					name: 'layout',
 					meta: {title: 'CSS布局' },
-					component: simpleLayout
+					component: layout
 				},
-				// {
-				// 	path: '/threeLayout',
-				// 	name: 'threeLayout',
-				// 	meta: {title: '三栏布局 —— 圣杯双飞翼' },
-				// 	component: threeLayout
-				// },
+				{
+					path: '/flex',
+					name: 'flex',
+					meta: {title: 'flex布局' },
+					component: flex
+				},
 				{
 					path: '/grid',
 					name: 'grid',
@@ -106,19 +105,14 @@ export default new Router({
 					name: 'columns',
 					meta: {title: 'columns分栏布局' },
 					component: columns
-				},
-				{
-					path: '/flex',
-					name: 'flex',
-					meta: {title: 'flex布局' },
-					component: flex
 				}
+				
 			]
 		},
 		{
 			path: '/css3',
 			component: Main,
-			meta: {title: 'css3新属性' },  
+			meta: {title: 'css3新属性', icon: 'el-icon-sugar' },  
 			name: 'css3' ,
 			menu: true,
 			leaf : true,

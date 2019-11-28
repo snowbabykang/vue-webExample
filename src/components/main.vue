@@ -1,6 +1,6 @@
 <template>
     <el-container class="container">
-        <el-aside width="260px">
+        <el-aside :width="isCollapse ? '64px' : '260px'" :class="isCollapse ? 'collapse' : ''">
             <el-menu
                 :default-active="$route.path"
                 class="mymenu"
@@ -14,7 +14,9 @@
 
         <el-container>
             <el-header class="header">
-                {{$route.meta.title}}
+                <div @click="collapse" class="collapsebtn">
+                    <i :class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
+                </div> {{$route.meta.title}}
             </el-header>
             <el-main>
                 <router-view/>
@@ -28,8 +30,7 @@ import NavMenu from '../components/menu'
 export default {
     data() {
         return {
-            isCollapse: false,
-            // treeData: []
+            isCollapse: false
         }
     },
     components: {
@@ -71,8 +72,26 @@ export default {
     line-height: 40px;
     height: 40px!important;
 }
-
 .aside {
     color: #333;
+}
+.collapsebtn {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    margin-left: -17px;
+}
+.collapse {
+
+}
+.collapse >>> .el-menu-item span, .collapse >>> .el-submenu .el-submenu__title span {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: inline-block;
+}
+.collapse >>> .el-menu-item .el-submenu__icon-arrow, .collapse >>> .el-submenu .el-submenu__title .el-submenu__icon-arrow {
+    display: none;
 }
 </style>

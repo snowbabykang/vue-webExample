@@ -38,7 +38,7 @@ export default {
             con.addEventListener('mouseup',function(event){
                 points.endPoint = event.offsetX;
                 if( points.endPoint < points.startPoint ){
-                    //向后滑动
+                    //向左滑动
                     if(con.scrollWidth > content.offsetWidth){
                         points.left ++;
                         points.right --;
@@ -47,7 +47,7 @@ export default {
                         alert('已经结束');
                     }
                 }else if( points.endPoint > points.startPoint ){
-                    //向前滑动
+                    //向右滑动
                     if(points.left <= 0){
                         alert('已经是首页');
                     }else{
@@ -90,7 +90,5 @@ export default {
     /* break-inside: avoid;
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid; */
-    
-    /* break-before: auto; */
 }
 </style>

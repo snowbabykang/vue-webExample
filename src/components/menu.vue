@@ -17,7 +17,7 @@
                 :index="index+'_'+navMenu.path"
             >
                 <template slot="title">
-                    <i :class="['fa',navMenu.icon]"></i>
+                    <i :class="navMenu.meta.icon"></i>
                     <span slot="title">{{navMenu.meta.title}}</span>
                 </template>
                 <NavMenu :navMenus="navMenu.children"></NavMenu>
@@ -37,4 +37,5 @@
 </script>
 
 <style scoped>
+
 </style>

@@ -3,7 +3,7 @@
         <el-tab-pane label="columns基础属性测试" name="first"></el-tab-pane>
         <el-tab-pane label="瀑布流示例" name="second"></el-tab-pane>
         <el-tab-pane label="翻书示例" name="third"></el-tab-pane>
-        <el-tab-pane label="瀑布流加载" name="four"></el-tab-pane>
+        <!-- <el-tab-pane label="瀑布流加载" name="four"></el-tab-pane> -->
         <keep-alive>
             <div :is="activeName"></div>
         </keep-alive>

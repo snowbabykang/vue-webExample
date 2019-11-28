@@ -1,5 +1,6 @@
 <template>
-    <el-tabs
+    <div>
+    <!-- <el-tabs
         v-model="activeName"
         type="border-card"
         class="contentbox"
@@ -7,7 +8,7 @@
         <el-tab-pane
             label="属性测试"
             name="1"
-        >
+        > -->
             <el-form>
                 <el-form-item
                     label="布局方向flex-direction"
@@ -99,11 +100,10 @@
                     :key="item"
                     :class="'item-'+item"
                     :style="{
-                    'width': !flexShrinkWidth ? (flexWrap !== 'nowrap' ? '150px' : 'auto') : '200px',
                     'order': item == 3 ? order3 : (item == 5 ? order5 : (item == 8 ? order8 : 0)),
                     'flex-grow' : item == 2 ? flexGrow : 0,
-                    'flex-shrink' : flexShrink,
-                    'flex-basis': item == 2 ? flexBasis : 'auto',
+                    'flex-shrink' : item === 1 ? flexShrink1 : flexShrink,
+                    'flex-basis': flexBasis && item == 2 ? flexBasis : (!flexShrinkWidth ? (flexWrap !== 'nowrap' ? '150px' : 'auto') : '200px'),
                     'align-self': item == 2 ? alignSelf : 'auto',
                 }"
                 >
@@ -130,6 +130,7 @@
                         style="width:200px;"
                     ></el-input>
                 </el-form-item>
+                <el-alert type="success" title="flex-grow不支持负值，如果flex-grow值小于1，则扩展的空间就总剩余空间和这个比例的计算值；如果flex-grow值大于1，则独享所有剩余空间。"></el-alert>
                 <el-form-item
                     label="item-2的flex-grow"
                     style="margin:0;"
@@ -142,7 +143,7 @@
                         >{{item}}</el-radio>
                     </el-radio-group>
                 </el-form-item>
-                <el-alert type="success">测试flex-shrink时将每个子项宽度定义为200px；flex-shrink默认=1表示都会收缩</el-alert>
+                <el-alert type="success" title="测试flex-shrink时将每个子项宽度定义为200px；flex-shrink默认=1表示都会收缩"></el-alert>
                 <el-form-item
                     label="所有子项的宽度，设置flex-shrink才调整"
                     style="margin:0;"
@@ -165,6 +166,26 @@
                     </el-radio-group>
                 </el-form-item>
                 <el-form-item
+                    label="item-1的flex-shrink"
+                    style="margin:0;"
+                >
+                    <el-radio-group v-model="flexShrink1">
+                        <el-radio
+                            :label="item"
+                            v-for="item in flexShrinkArr1"
+                            :key="item"
+                        >{{item}}</el-radio>
+                    </el-radio-group>
+                </el-form-item>
+                <div class="shrinkbox">
+                    <p>首先：父容器百分百宽度是1125px，每个子项的flex-basis是200px；10个子项是2000px，超出父元素875px；</p>
+                    <p>超出的875px需要被子项消化收缩，计算需要收缩的量值</p>
+                    <p>公式= item的shrink值/总shrink值 * 超出的值</p>
+                    <p>如果item-1选择0.8，则item-1的收缩值= 0.8/9.8*875 = 71.428...</p>
+                    <p>所以item-1收缩后的值是200-71.42=128.57...</p>
+                    <p>其他item收缩后的值是200- 1/9.8*875=110.71</p>
+                </div>
+                <el-form-item
                     label="item-2的flex-basis"
                     style="margin:0;"
                 >
@@ -186,8 +207,9 @@
                     </el-radio-group>
                 </el-form-item>
             </el-form>
-        </el-tab-pane>
-    </el-tabs>
+        </div>
+        <!-- </el-tab-pane>
+    </el-tabs> -->
 </template>
 
 <script>
@@ -240,7 +262,9 @@
                 flexShrinkWidth: 0,
                 flexShrink: 1,
                 flexShrinkArr: [0, -1, 1, 2, 0.5],
-                flexBasis: 'auto',
+                flexShrink1: 1,
+                flexShrinkArr1: [0, -1, 1, 2, 0.5, 0.8],
+                flexBasis: '',
                 alignSelf: 'auto',
                 alignSelfArr: [
                     'auto',
@@ -293,5 +317,10 @@
 }
 .item-8 .flex-info {
     background: #9b0034;
+}
+.shrinkbox {
+    padding: 10px;
+    background: #f0f1f2;
+    margin-bottom: 10px;
 }
 </style>
