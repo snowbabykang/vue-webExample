@@ -17,6 +17,8 @@ const objectFit = () => import('@/pages/css3/objectFit');
 const background = () => import('@/pages/css3/background');
 const border = () => import('@/pages/css3/border');
 
+const starRate = () => import('@/pages/npm/star');
+
 
 Vue.use(Router);
 
@@ -112,7 +114,7 @@ export default new Router({
 		{
 			path: '/css3',
 			component: Main,
-			meta: {title: 'css3新属性', icon: 'el-icon-sugar' },  
+			meta: {title: 'CSS3新属性', icon: 'el-icon-sugar' },  
 			name: 'css3' ,
 			menu: true,
 			leaf : true,
@@ -134,6 +136,22 @@ export default new Router({
 					name: 'border',
 					meta: {title: 'border新增属性' },
 					component: border
+				}
+			]
+		},
+		{
+			path: '/npm',
+			component: Main,
+			meta: {title: 'NPM私有包', icon: 'el-icon-lock' },  
+			name: 'npm' ,
+			menu: true,
+			leaf : true,
+			children: [
+				{
+					path: '/starRate',
+					name: 'starRate',
+					meta: {title: '五星评分' },
+					component: starRate
 				}
 			]
 		},
