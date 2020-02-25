@@ -1,0 +1,55 @@
+const Main = () => import('@/components/main');
+const provideInject = () => import('@/pages/vue/provideInject/index');
+const getRef = () => import('@/pages/vue/getRef/index');
+const testSpeed = () => import('@/pages/vue/testSpeed');
+const showPPT = () => import('@/pages/vue/showPPT');
+const tagConnection = () => import('@/pages/vue/tagConnection');
+const getTagConnection = () => import('@/pages/vue/getTagConnection');
+
+
+export default {
+    path: '/vue',
+    component: Main,
+    meta: {title: 'Vue功能测试', icon: 'el-icon-lock' },  
+    name: 'vue' ,
+    menu: true,
+    leaf : true,
+    children: [
+        {
+            path: '/provideInject',
+            name: 'provideInject',
+            meta: {title: 'provide & inject' },
+            component: provideInject
+        },
+        {
+            path: '/getRef',
+            name: 'getRef',
+            meta: {title: '获取跨组件层级实例' },
+            component: getRef
+        },
+        {
+            path: '/testSpeed',
+            name: 'testSpeed',
+            meta: {title: '测试网速' },
+            component: testSpeed
+        },
+        {
+            path: '/showPPT',
+            name: 'showPPT',
+            meta: {title: 'PPT预览' },
+            component: showPPT
+        },
+        {
+            path: '/tagConnection',
+            name: 'tagConnection',
+            meta: {title: '浏览器标签通讯' },
+            component: tagConnection
+        },
+        {
+            path: '/getTagConnection',
+            name: 'getTagConnection',
+            meta: {title: '接收浏览器标签通讯' },
+            component: getTagConnection
+        }
+    ]
+}

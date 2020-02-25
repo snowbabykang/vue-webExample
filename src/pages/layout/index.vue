@@ -18,16 +18,16 @@
 </template>
 
 <script>
-    import simple from '@/pages/layout/simple';
-    import float from '@/pages/layout/float';
-    import table from '@/pages/layout/table';
-    import box from '@/pages/layout/box';
-    import flex from '@/pages/layout/flex';
-    import grid from '@/pages/layout/grid';
-    import tableDynamic from '@/pages/layout/tableDynamic';
-    import dynamic from '@/pages/layout/dynamic';
-    import grail from '@/pages/layout/grail';
-    import both from '@/pages/layout/both';
+    import simple from './baseLayout/simple';
+    import float from './baseLayout/float';
+    import table from './baseLayout/table';
+    import box from './baseLayout/box';
+    import flex from './baseLayout/flex';
+    import grid from './baseLayout/grid';
+    import tableDynamic from './baseLayout/tableDynamic';
+    import dynamic from './baseLayout/dynamic';
+    import grail from './baseLayout/grail';
+    import both from './baseLayout/both';
     export default {
         data() {
             return {

@@ -7,12 +7,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
-
-// import {Star, Question} from 'test-plugs';
-// Vue.use(Star);
-// Vue.use(Question);
-import JulivePlugs from 'test-plugs';
-Vue.use(JulivePlugs);
+import ref from 'vue-ref'
+Vue.use(ref)
 
 Vue.config.productionTip = false
 
