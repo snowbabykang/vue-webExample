@@ -5,7 +5,7 @@
                 v-if="!navMenu.children"
                 :data="navMenu"
                 :route="navMenu.path"
-                :index="index+'_'+navMenu.path"
+                :index="navMenu.path"
             >
                 <template slot="title">
                     <span slot="title">{{navMenu.meta.title}}</span>
@@ -14,7 +14,7 @@
             <el-submenu
                 v-if="navMenu.children"
                 :data="navMenu"
-                :index="index+'_'+navMenu.path"
+                :index="navMenu.path"
             >
                 <template slot="title">
                     <i :class="navMenu.meta.icon"></i>
