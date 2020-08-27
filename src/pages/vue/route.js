@@ -5,6 +5,7 @@ const testSpeed = () => import('@/pages/vue/testSpeed');
 const showPPT = () => import('@/pages/vue/showPPT');
 const tagConnection = () => import('@/pages/vue/tagConnection');
 const getTagConnection = () => import('@/pages/vue/getTagConnection');
+const computedAndMethods = () => import('@/pages/vue/computedAndMethods');
 
 
 export default {
@@ -26,6 +27,12 @@ export default {
             name: 'getRef',
             meta: {title: '获取跨组件层级实例' },
             component: getRef
+        },
+        {
+            path: '/computedAndMethods',
+            name: 'computedAndMethods',
+            meta: {title: 'computed与methods区别', content: '1111' },
+            component: computedAndMethods
         },
         {
             path: '/testSpeed',
@@ -50,6 +57,7 @@ export default {
             name: 'getTagConnection',
             meta: {title: '接收浏览器标签通讯' },
             component: getTagConnection
-        }
+        },
+        
     ]
 }

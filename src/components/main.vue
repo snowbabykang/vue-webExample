@@ -17,6 +17,7 @@
                 <div @click="collapse" class="collapsebtn">
                     <i :class="isCollapse ? 'el-icon-arrow-right' : 'el-icon-arrow-left'"></i>
                 </div> {{$route.meta.title}}
+                <router-link to="/" class="router-link">返回首页</router-link>
             </el-header>
             <el-main>
                 <router-view/>
@@ -81,9 +82,6 @@ export default {
     text-align: center;
     margin-left: -17px;
 }
-.collapse {
-
-}
 .collapse >>> .el-menu-item span, .collapse >>> .el-submenu .el-submenu__title span {
     height: 0;
     width: 0;
@@ -93,5 +91,10 @@ export default {
 }
 .collapse >>> .el-menu-item .el-submenu__icon-arrow, .collapse >>> .el-submenu .el-submenu__title .el-submenu__icon-arrow {
     display: none;
+}
+.router-link{
+    float: right;
+    text-decoration: none;
+    color: #fff;
 }
 </style>

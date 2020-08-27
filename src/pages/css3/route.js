@@ -2,11 +2,13 @@ const Main = () => import('@/components/main');
 const objectFit = () => import('@/pages/css3/objectFit');
 const background = () => import('@/pages/css3/background');
 const border = () => import('@/pages/css3/border');
+const textAlignJustify = () => import('@/pages/css3/textAlignJustify');
+const eclipOpt = () => import('@/pages/css3/eclipOpt');
 
 export default {
     path: '/css3',
     component: Main,
-    meta: {title: 'CSS3新属性', icon: 'el-icon-sugar' },  
+    meta: {title: 'CSS样式', icon: 'el-icon-sugar' },  
     name: 'css3' ,
     menu: true,
     leaf : true,
@@ -28,6 +30,18 @@ export default {
             name: 'border',
             meta: {title: 'border新增属性' },
             component: border
+        },
+        {
+            path: '/textAlignJustify',
+            name: 'textAlignJustify',
+            meta: {title: '文字左右对齐' },
+            component: textAlignJustify
+        },
+        {
+            path: '/eclipOpt',
+            name: 'eclipOpt',
+            meta: {title: '省略号+操作文字',content:'文本内容超出规定行数后展开收起的处理' },
+            component: eclipOpt
         }
     ]
 }

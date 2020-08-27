@@ -5,22 +5,21 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                storageVal: ''
-            };
-        },
-        methods: {},
-        mounted() {
-            window.addEventListener('storage', event => {
-                if (event.key === 'connection') {
-                    this.storageVal = event.newValue;
-                }
-            });
-            
-        }
-    };
+export default {
+    data() {
+        return {
+            storageVal: ''
+        };
+    },
+    methods: {},
+    mounted() {
+        window.addEventListener('storage', event => {
+            if (event.key === 'connection') {
+                this.storageVal = event.newValue;
+            }
+        });
+    }
+};
 </script>
 
 <style>

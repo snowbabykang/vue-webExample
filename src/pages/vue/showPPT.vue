@@ -9,7 +9,7 @@
         >
         </iframe>
 
-        <!-- <iframe src="https://docs.google.com/viewer?url=http://comjia-1.oss-cn-beijing.aliyuncs.com/developer/20200221/20200221020121_jfym.pptx"></iframe> -->
+        <iframe src="https://docs.google.com/viewer?url=http://comjia-1.oss-cn-beijing.aliyuncs.com/developer/20200221/20200221020121_jfym.pptx"></iframe>
         <!-- <iframe
             :src="'//www.xdocin.com/xdoc?_func=to&_format=html&_cache=1&_xdoc='+fileUrl"
             width="100%"

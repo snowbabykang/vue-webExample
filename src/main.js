@@ -10,6 +10,8 @@ Vue.use(ElementUI);
 import ref from 'vue-ref'
 Vue.use(ref)
 
+import './assets/css/common.css';
+
 Vue.config.productionTip = false
 
 // router.afterEach((to, from) => {
