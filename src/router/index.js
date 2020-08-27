@@ -36,6 +36,7 @@ export default new Router({
 		{
 			path: '*',
 			hidden: true,
+			name: '',
 			redirect: { path: '/404' }
 		},
 		webjsRoute,
