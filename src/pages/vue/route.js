@@ -6,6 +6,8 @@ const showPPT = () => import('@/pages/vue/showPPT');
 const tagConnection = () => import('@/pages/vue/tagConnection');
 const getTagConnection = () => import('@/pages/vue/getTagConnection');
 const computedAndMethods = () => import('@/pages/vue/computedAndMethods');
+const keepAlive = () => import('@/pages/vue/keepAlive/index');
+const attrs = () => import('@/pages/vue/attrs/index');
 
 
 export default {
@@ -33,6 +35,18 @@ export default {
             name: 'computedAndMethods',
             meta: {title: 'computed与methods区别', content: '1111' },
             component: computedAndMethods
+        },
+        {
+            path: '/keepAlive',
+            name: 'keepAlive',
+            meta: {title: 'keepAlive is'},
+            component: keepAlive
+        },
+        {
+            path: '/attrs',
+            name: 'attrs',
+            meta: {title: 'attrs'},
+            component: attrs
         },
         {
             path: '/testSpeed',

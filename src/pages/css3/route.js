@@ -40,7 +40,7 @@ export default {
         {
             path: '/eclipOpt',
             name: 'eclipOpt',
-            meta: {title: '省略号+操作文字',content:'文本内容超出规定行数后展开收起的处理' },
+            meta: {title: '文字右侧展开全文',content:'文本内容超出规定行数后展开收起的处理' },
             component: eclipOpt
         }
     ]

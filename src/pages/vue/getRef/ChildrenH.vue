@@ -4,5 +4,11 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    getInfo(val) {
+      console.log(val);
+    }
+  }
+};
 </script>

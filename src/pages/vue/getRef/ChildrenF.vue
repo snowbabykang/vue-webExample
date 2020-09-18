@@ -23,6 +23,7 @@ export default {
       console.log(this.getParentRef());
     },
     getHRef() {
+      this.getParentChildrenRef("childrenH").getInfo('获取H节点的getInfo方法');
       console.log(this.getParentChildrenRef("childrenH"));
     }
   }
