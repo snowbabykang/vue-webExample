@@ -23,22 +23,22 @@ import axios from 'axios';
 const fileList = [
     {
         name: '发票.png',
-        url: 'http://test-xuchengliang.oss-cn-beijing.aliyuncs.com/legal-approval-contract/NKTGRfPch8.png?OSSAccessKeyId=LTAI4G2rRQHEiZfpDsGgBNtP&Expires=1601018774&Signature=wgFvzqfutOvu0KvmHCw0c%2B%2FNaXw%3D'
+        url: ''
     },
     // {
     //     name: '111.doc',
-    //     url: 'https://test-xuchengliang.oss-cn-beijing.aliyuncs.com/legal-approval-contract/20200924/20200924033237_5ai5.docx'
+    //     url: ''
     // },
     {
         name: '222.pdf',
-        url: 'http://test-xuchengliang.oss-cn-beijing.aliyuncs.com/legal-approval-contract/W7FH665TCb.pdf?OSSAccessKeyId=LTAI4G2rRQHEiZfpDsGgBNtP&Expires=1601019819&Signature=7Xb8KwfE3q0SiiuXfZ6HhuZMj9Q%3D'
+        url: ''
     }
 ];
 export default {
     data() {
         return {
             fileList: fileList,
-            imgList: ['https://comjia-1.oss-cn-beijing.aliyuncs.com/contract/20200924/20200924114458_m1h1.png', 'https://comjia-1.oss-cn-beijing.aliyuncs.com/contract/20200924/20200924114625_gq2h.png']
+            imgList: ['', '']
         };
     },
     mounted() {},
