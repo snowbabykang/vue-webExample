@@ -8,6 +8,7 @@ const getTagConnection = () => import('@/pages/vue/getTagConnection');
 const computedAndMethods = () => import('@/pages/vue/computedAndMethods');
 const keepAlive = () => import('@/pages/vue/keepAlive/index');
 const attrs = () => import('@/pages/vue/attrs/index');
+const jsZip = () => import('@/pages/vue/jsZip');
 
 
 export default {
@@ -18,6 +19,12 @@ export default {
     menu: true,
     leaf : true,
     children: [
+        {
+            path: '/jsZip',
+            name: 'jsZip',
+            meta: {title: 'jsZip打包下载文件流' },
+            component: jsZip
+        },
         {
             path: '/provideInject',
             name: 'provideInject',
