@@ -1,15 +1,16 @@
 <template>
     <div>
+        {{name}}
         <h3>请求链接获取文件内容需要能够跨域</h3>
         <ul>
-            <li v-for="item in fileList"
-                :key="item.url">{{item.name}}</li>
+            <li v-for="(item, index) in fileList"
+                :key="index">{{item.name}}</li>
         </ul>
         <el-button type="primary"
             @click="downLoadAll(fileList)">打包并下载zip文件</el-button>
         <ul>
-            <li v-for="item in imgList"
-                :key="item">{{item}}</li>
+            <li v-for="(item, index) in imgList"
+                :key="index">{{item}}</li>
         </ul>
         <el-button type="primary"
             @click="downLoadImgs(imgList)">打包并下载图片zip文件</el-button>
@@ -38,10 +39,16 @@ export default {
     data() {
         return {
             fileList: fileList,
-            imgList: ['', '']
+            imgList: ['', ''],
+            name: localStorage.getItem('name')
         };
     },
-    mounted() {},
+    create() {
+        window.addEventListener('setItem', (e) => {
+            console.log('监听变化',e);
+            this.name = localStorage.getItem('name');
+        });
+    },
     methods: {
         getFile(url) {
             let that = this;
@@ -49,7 +56,7 @@ export default {
                 axios({
                     method: 'get',
                     url,
-                    responseType: 'arraybuffer',
+                    responseType: 'arraybuffer'
                     // onDownloadProgress: function(progressEvent) {}
                 })
                     .then(data => {

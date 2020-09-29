@@ -9,6 +9,7 @@ const computedAndMethods = () => import('@/pages/vue/computedAndMethods');
 const keepAlive = () => import('@/pages/vue/keepAlive/index');
 const attrs = () => import('@/pages/vue/attrs/index');
 const jsZip = () => import('@/pages/vue/jsZip');
+const localstorage = () => import('@/pages/vue/localstorage');
 
 
 export default {
@@ -19,6 +20,12 @@ export default {
     menu: true,
     leaf : true,
     children: [
+        {
+            path: '/localstorage',
+            name: 'localstorage',
+            meta: {title: 'Vue监听localstorage' },
+            component: localstorage
+        },
         {
             path: '/jsZip',
             name: 'jsZip',
