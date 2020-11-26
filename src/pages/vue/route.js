@@ -10,6 +10,8 @@ const keepAlive = () => import('@/pages/vue/keepAlive/index');
 const attrs = () => import('@/pages/vue/attrs/index');
 const jsZip = () => import('@/pages/vue/jsZip');
 const localstorage = () => import('@/pages/vue/localstorage');
+const slot = () => import('@/pages/vue/slot/parent');
+const renderless = () => import('@/pages/vue/renderless/parent');
 
 
 export default {
@@ -20,6 +22,18 @@ export default {
     menu: true,
     leaf : true,
     children: [
+        {
+            path: '/renderless',
+            name: 'renderless',
+            meta: {title: 'Renderless组件（非渲染组件）', content: 'renderless组件，逻辑与样式分离' },
+            component: renderless
+        },
+        {
+            path: '/slot',
+            name: 'slot',
+            meta: {title: 'slot插槽',},
+            component: slot
+        },
         {
             path: '/localstorage',
             name: 'localstorage',
