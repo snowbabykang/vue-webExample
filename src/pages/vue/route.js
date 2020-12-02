@@ -25,7 +25,7 @@ export default {
         {
             path: '/renderless',
             name: 'renderless',
-            meta: {title: 'Renderless组件（非渲染组件）', content: 'renderless组件，逻辑与样式分离' },
+            meta: {title: 'render组件（渲染函数）', content: '逻辑与样式分离的组件' },
             component: renderless
         },
         {
