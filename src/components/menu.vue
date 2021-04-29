@@ -3,7 +3,6 @@
         <label v-for="(navMenu,index) in navMenus" :key="index">
             <el-menu-item
                 v-if="!navMenu.children"
-                :data="navMenu"
                 :route="navMenu.path"
                 :index="navMenu.path"
             >
@@ -13,7 +12,6 @@
             </el-menu-item>
             <el-submenu
                 v-if="navMenu.children"
-                :data="navMenu"
                 :index="navMenu.path"
             >
                 <template slot="title">

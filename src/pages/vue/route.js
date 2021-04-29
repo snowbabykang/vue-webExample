@@ -12,6 +12,7 @@ const jsZip = () => import('@/pages/vue/jsZip');
 const localstorage = () => import('@/pages/vue/localstorage');
 const slot = () => import('@/pages/vue/slot/parent');
 const renderless = () => import('@/pages/vue/renderless/parent');
+const virtualList = () => import('@/pages/vue/virtualList/index');
 
 
 export default {
@@ -22,6 +23,12 @@ export default {
     menu: true,
     leaf : true,
     children: [
+        {
+            path: '/virtualList',
+            name: 'virtualList',
+            meta: {title: 'Vue虚拟列表', content: '大列表数据加载' },
+            component: virtualList
+        },
         {
             path: '/renderless',
             name: 'renderless',
