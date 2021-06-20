@@ -4,6 +4,7 @@ const background = () => import('@/pages/css3/background');
 const border = () => import('@/pages/css3/border');
 const textAlignJustify = () => import('@/pages/css3/textAlignJustify');
 const eclipOpt = () => import('@/pages/css3/eclipOpt');
+const waterBall = () => import('@/pages/css3/waterBall');
 
 export default {
     path: '/css3',
@@ -13,6 +14,12 @@ export default {
     menu: true,
     leaf : true,
     children: [
+        {
+            path: '/waterBall',
+            name: 'waterBall',
+            meta: {title: '水球效果' },
+            component: waterBall
+        },
         {
             path: '/objectFit',
             name: 'objectFit',

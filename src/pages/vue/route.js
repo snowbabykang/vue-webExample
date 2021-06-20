@@ -13,6 +13,7 @@ const localstorage = () => import('@/pages/vue/localstorage');
 const slot = () => import('@/pages/vue/slot/parent');
 const renderless = () => import('@/pages/vue/renderless/parent');
 const virtualList = () => import('@/pages/vue/virtualList/index');
+const mergeImg = () => import('@/pages/vue/mergeImg/index');
 
 
 export default {
@@ -23,6 +24,12 @@ export default {
     menu: true,
     leaf : true,
     children: [
+        {
+            path: '/mergeImg',
+            name: 'mergeImg',
+            meta: {title: '合成图片', content: '拖拽缩放图片并合成下载' },
+            component: mergeImg
+        },
         {
             path: '/virtualList',
             name: 'virtualList',
