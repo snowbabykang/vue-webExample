@@ -2,7 +2,7 @@
  * @author: kangxue
  * @Date: 2021-04-29 10:27:12
  * @LastEditors: kangxue
- * @LastEditTime: 2021-05-20 11:58:11
+ * @LastEditTime: 2021-06-20 22:39:17
  * @description: file content
 -->
 <template>
@@ -38,11 +38,14 @@ export default {
     data() {
         return {
             list: [],
+            // 虚拟dom加载
             startIndex: 0,
             //滚动过程显示的结束索引
             endIndex: 10,
+            // 内容距离上下的距离，确保显示中间的数据
             paddingTop: 0,
             paddingBottom: 0,
+            // 整体列表高度
             allHeight: 0,
             //每一列的高度
             itemHeight: 50,
@@ -51,6 +54,7 @@ export default {
         };
     },
     computed: {
+        // 滚动触发， 更改表单不触发
         scrollList() {
             console.log(this.startIndex, this.endIndex);
             return this.list.slice(this.startIndex, this.endIndex);
@@ -64,7 +68,7 @@ export default {
     },
     watch: {
         list(val) {
-            console.log(val);
+            // console.log(val);
             const valLen = val.length;
             this.allHeight = valLen * this.itemHeight;
             this.paddingBottom = this.allHeight - this.scrollList.length * this.itemHeight;
@@ -100,13 +104,16 @@ export default {
         add() {
             let len = this.list.length;
             for (let i = len; i < 100 + len; i++) {
-                this.list.push('列表' + (i + 1));
+                this.list.push({
+                    title: '列表' + (i + 1),
+                    value: ''
+                });
             }
         },
         deleteItem(index) {
             console.log(this.startIndex, index);
             let del = this.startIndex + index;
-            this.list.splice(del,1);
+            this.list.splice(del, 1);
         },
         getInfo() {
             console.log(this.list);
