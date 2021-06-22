@@ -2,7 +2,7 @@
  * @author: kangxue
  * @Date: 2021-04-29 11:42:11
  * @LastEditors: kangxue
- * @LastEditTime: 2021-05-08 17:29:54
+ * @LastEditTime: 2021-06-22 14:06:48
  * @description: flex模拟table样式样式，且可以固定左右侧，固定上侧
 -->
 <template>
@@ -35,6 +35,7 @@ export default {
     },
     computed: {},
     mounted() {
+        
         const ARR_SIZE = 10;
         const hugeArr = new Array(ARR_SIZE).fill(1);
         for (let i = 0; i < hugeArr.length; i++) {
