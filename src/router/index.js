@@ -8,6 +8,7 @@ import webjsRoute from '@/pages/webjs/route';
 import layoutRoute from '@/pages/layout/route';
 import css3Route from '@/pages/css3/route';
 import vueRoute from '@/pages/vue/route';
+import jsRoute from '@/pages/js/route';
 
 
 Vue.use(Router);
@@ -42,6 +43,7 @@ export default new Router({
 		webjsRoute,
 		layoutRoute,
 		css3Route,
-		vueRoute
+		vueRoute,
+		jsRoute
 	]
 }) 
