@@ -5,6 +5,9 @@ const border = () => import('@/pages/css3/border');
 const textAlignJustify = () => import('@/pages/css3/textAlignJustify');
 const eclipOpt = () => import('@/pages/css3/eclipOpt');
 const waterBall = () => import('@/pages/css3/waterBall');
+const shape = () => import('@/pages/css3/shape');
+const gradient = () => import('@/pages/css3/gradient/index');
+const form = () => import('@/pages/css3/form/index');
 
 export default {
     path: '/css3',
@@ -49,6 +52,24 @@ export default {
             name: 'eclipOpt',
             meta: {title: '文字右侧展开全文',content:'文本内容超出规定行数后展开收起的处理' },
             component: eclipOpt
+        },
+        {
+            path: '/shape',
+            name: 'shape',
+            meta: {title: '文字包围图片'},
+            component: shape
+        },
+        {
+            path: '/gradient',
+            name: 'gradient',
+            meta: {title: '渐变色'},
+            component: gradient
+        },
+        {
+            path: '/form',
+            name: 'form',
+            meta: {title: '表单样式'},
+            component: form
         }
     ]
 }
