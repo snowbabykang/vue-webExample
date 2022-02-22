@@ -2,7 +2,7 @@
  * @author: kangxue
  * @Date: 2022-02-11 14:36:10
  * @LastEditors: kangxue
- * @LastEditTime: 2022-02-15 11:47:03
+ * @LastEditTime: 2022-02-22 10:33:45
  * @description: 串珠生成图
 -->
 <template>
@@ -27,7 +27,7 @@
                 <span class="cell color-box" v-for="item in colorList" :key="item" :style="{'backgroundColor': item}" @click="setPenColor(item)"></span>
             </el-form-item>
         </el-form>
-        <div>设置好模板后，设置笔触色，点击单元格上色</div>
+        <div>设置好模板后，设置笔触色，点击单元格上色；笔触色： {{cellColor}}</div>
         <div class="model-area">
             <div v-for="(row, index) in modelList"
                 :key="index">
@@ -55,7 +55,7 @@ export default {
         };
     },
     created() {
-        this.colorList = ['black', 'white','red', '#f97dc2', '#50befa', '#5316b3', '#f035a7', '#fa9d3b'];
+        this.colorList = ['black', 'white','red', '#f97dc2', '#50befa', '#5316b3cc', '#f035a7', '#fa9d3b'];
     },
     methods: {
         // 生成模板
